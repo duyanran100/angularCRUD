@@ -1,0 +1,12 @@
+input{
+  width: 50%;
+  height: 2em;
+  text-align: center;
+  list-style: none;
+  border: 1px solid #eee;
+  border-radius: 0.5em;
+}
+
+button{
+  margin: 1em;
+}

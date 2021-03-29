@@ -1,0 +1,29 @@
+<div class="list">
+  <div class>
+    <h4>Comments</h4>
+    <ul>
+      <li
+        *ngFor="let commentModel of comment; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveComment(commentModel, i)">
+        {{ commentModel.title }}
+      </li>
+    </ul>
+    <button (click)="removeAllComment()">Remove All</button>
+  </div>
+  <div>
+    <div *ngIf="currentComment">
+      <app-details
+        (refreshList)="refreshList()"
+        [comment]="currentComment"
+      ></app-details>
+    </div>
+    <div *ngIf="!currentComment">
+      <br />
+      <p>Click "Home" to view comments list</p>
+      <p>Click "Add" to add comments</p>
+      <p>Click any comments to view details</p>
+      <p>Click "Remove All" to delete all comments</p>
+    </div>
+  </div>
+</div>

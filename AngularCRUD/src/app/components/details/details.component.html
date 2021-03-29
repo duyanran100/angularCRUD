@@ -1,0 +1,24 @@
+<div *ngIf="currentComment" class="edit-form">
+
+  <form>
+    <div>
+      <label for="title">Title</label>
+      <br>
+      <input type="text" id="title" [(ngModel)]="currentComment.title" name="title"/>
+    </div>
+    <div>
+      <label for="content">Content</label>
+      <br>
+      <input type="text" id="content" [(ngModel)]="currentComment.content" name="content"/>
+    </div>
+  </form>
+  <br>
+  <button (click)="deleteComment()">Delete</button>
+  <button type="submit"(click)="updateComment()">Update</button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentComment">
+  <br />
+  <p>404 Not Found</p>
+</div>

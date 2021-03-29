@@ -1,0 +1,21 @@
+<div>
+  <div *ngIf="!submitted">
+    <div class="title">
+      <label for="title">Title</label>
+      <br>
+      <input type="text" id="title" [(ngModel)]="comment.title"/>
+    </div>
+    <div class="content">
+      <label for="content">Content</label>
+      <br>
+      <input id="content" type="text" [(ngModel)]="comment.content"/>
+    </div>
+    <br>
+    <button (click)="submitList()" class="submit">Submit</button>
+  </div>
+  <div *ngIf="submitted">
+    <h4>Comments Submitted</h4>
+    <button class="redirect" (click)="redirect()">Back</button>
+    <button class="new" (click)="newList()">Continue Add</button>
+  </div>
+</div>
